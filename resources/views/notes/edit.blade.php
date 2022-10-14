@@ -12,14 +12,14 @@
                 <form action="{{ route('notes.update', $note) }}" method="post">
                     @method('put')
                     @csrf
-                    <x-input
+                    <x-text-input
                         type="text"
                         name="title"
                         field="title"
                         placeholder="Title"
                         class="w-full"
                         autocomplete="off"
-                        :value="@old('title', $note->title)"></x-input>
+                        :value="@old('title', $note->title)"></x-text-input>
 
                     <x-textarea
                         name="text"
@@ -29,7 +29,7 @@
                         class="w-full mt-6"
                         :value="@old('text', $note->text)"></x-textarea>
 
-                    <x-button class="mt-6">Save Note</x-button>
+                    <x-primary-button class="mt-6">Save Note</x-primary-button>
                 </form>
             </div>
         </div>
